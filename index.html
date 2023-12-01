@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketch</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+<body>
+  <script src="sketch.js"></script>
 
-    <title>Sketch</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-  </head>
-
-  <body>
-    <script src="sketch.js"></script>
-  </body>
+  <!-- System navigation process with step-by-step instructions -->
+  <script>
+    document.write(`
+      <h2>System Navigation Process</h2>
+      <ol>
+        <li><strong>Index Fingertip Detection:</strong>
+          <ul>
+            <li>Draw a small circle on the camera view to indicate the position of the detected index fingertip on the image and on the video.</li>
+          </ul>
+        </li>
+        <li><strong>Freehand Drawing on the Image:</strong>
+          <ul>
+            <li>Press and release the 'f' key to enter the freehand drawing mode.</li>
+            <li>Enable drawing a freehand trace on the image based on the movement of your index fingertip.</li>
+          </ul>
+        </li>
+        <li><strong>Region Selection and Copying on the Image:</strong>
+          <ul>
+            <li>Press and release the 's' key to enter the region selection and copying mode.</li>
+            <li>Show a bounding box between the tips of your thumb and index finger in the camera view.</li>
+            <li>Adjust the size of the bounding box according to the distance between the two fingers.</li>
+            <li>Display a bounding box of the same size in the corresponding location on the image.</li>
+            <li>Press and release the 'c' key to capture the image region enclosed by the bounding box.</li>
+            <li>Move the bounding box to a new location and adjust its size based on the distance between the thumb and index finger.</li>
+            <li>Press and release the 'v' key to paste the previously captured image region onto the new location within the bounding box.</li>
+          </ul>
+        </li>
+      </ol>
+    `);
+  </script>
+</body>
 </html>
